@@ -35,17 +35,16 @@ class Deck:
 #Main Program
 if __name__ == "__main__":
     deck = Deck()
-    print("Deck created.")
-    print(f"Total cards in the deck: {deck.count()}")
+    print("Card Dealer \n")
+    print(f"I have a shuffled deck of {deck.count()} cards. \n")
     
     #Shuffle the deck
     deck.shuffle()
-    print("Deck Shuffled.")
     
     while True:
         try:
             #Ask the user how many cards to deal
-            num_to_deal = int(input("How many cards would you like to deal? "))
+            num_to_deal = int(input("How many cards would you like?: "))
             if num_to_deal <= 0:
                 print("Please enter a positive number.")
                 continue
@@ -53,12 +52,14 @@ if __name__ == "__main__":
             #Deal the cards
             dealt_cards = deck.deal(num_to_deal)
             if dealt_cards:
-                print ("Dealt cards: ")
+                print ("\nHere are your cards: ")
                 for card in dealt_cards:
-                    print(f" \n {card}")
+                    print(f"{card}")
               
             #Show how many cards are left
-            print(f"Cards remaining in the deck: {deck.count()}")
+            print(f"\nThere are {deck.count()} left in the deck.")
+            
+            print(f"\nGood luck!")
             
             #Check if the deck is empty
             if deck.count() == 0:
